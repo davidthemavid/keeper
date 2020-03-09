@@ -36,8 +36,18 @@ const notes = [
   }
 ];
 
+let getDate = () => {
+  let noteDay = new Date().getDate();
+  let noteMonth = new Date().getMonth() + 1;
+  let date = noteMonth + "/" + noteDay;
+  return date;
+};
+
+let date = getDate();
+let currentYear = new Date().getFullYear();
+
 let newNote = notes.map(item => (
-  <Note key={item.key} title={item.title} content={item.content} />
+  <Note key={item.key} title={item.title} content={item.content} date={date} />
 ));
 
 function App() {
@@ -45,7 +55,7 @@ function App() {
     <div className="App">
       <Header />
       {newNote}
-      <Footer />
+      <Footer year={currentYear} />
     </div>
   );
 }
