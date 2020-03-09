@@ -40,8 +40,6 @@ let newNote = notes.map(item => (
   <Note key={item.key} title={item.title} content={item.content} />
 ));
 
-console.log(newNote);
-
 function App() {
   return (
     <div className="App">
